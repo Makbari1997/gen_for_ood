@@ -1,0 +1,48 @@
+{
+    "dataset": "snips",
+    "bert": "bert-base-uncased",
+    "vector_dim": 768,
+    "seq_length": "max",
+    "finetune": true,
+    "finetune_epochs": 1,
+    "batch_size": 16,
+    
+    "_comment_gen_specific": "GEN baseline specific parameters",
+    "gen_method": "random_token_replacement",
+    "gen_num_examples": null,
+    "gen_replacement_prob": 0.3,
+    "gen_avg_length_factor": 1.0,
+    "gen_mix_classes": 3,
+    
+    "_comment_generation_methods": {
+        "random_token_replacement": "Replace random tokens with vocabulary tokens",
+        "random_shuffle": "Shuffle tokens within sentences", 
+        "random_sampling": "Generate sentences by sampling random tokens",
+        "class_mixing": "Mix tokens from different classes"
+    },
+    
+    "_comment_training_options": "Training configuration for GEN",
+    "use_class_weights": true,
+    "class_weight_method": "balanced",
+    "use_focal_loss": false,
+    "focal_alpha": 1.0,
+    "focal_gamma": 2.0,
+    "use_balanced_sampling": false,
+    "sampling_method": "oversample",
+    "use_warmup": false,
+    "warmup_steps": null,
+    "warmup_initial_lr": 1e-6,
+    "warmup_strategy": "linear",
+    "use_lr_schedule": false,
+    "lr_schedule_type": "exponential",
+    "lr_decay_steps": 1000,
+    "lr_decay_rate": 0.96,
+    "random_state": 42,
+    
+    "_comment_evaluation": "Evaluation settings",
+    "save_generated_examples": true,
+    "visualize_embeddings": true,
+    "max_examples_to_save": 100,
+    "tsne_perplexity": 30,
+    "tsne_random_state": 42
+}
